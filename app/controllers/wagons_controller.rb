@@ -1,5 +1,6 @@
 class WagonsController < ApplicationController
   before_action :find_wagon, only: [:show, :create]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @wagons = Wagon.all
