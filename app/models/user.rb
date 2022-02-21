@@ -6,5 +6,7 @@ class User < ApplicationRecord
   # create an array with the value you show the user and the value you want to store
   USER_TYPE = [["I have a wagon to rent", "Provider"], ["I'm looking for a wagon to partayyy", "Client"]]
   validates :first_name, :last_name, :user_type, presence: true
-  # check enum attribute
+  validates :user_type, inclusion: { in: USER_TYPE }
+
+  has_many :bookings
 end
