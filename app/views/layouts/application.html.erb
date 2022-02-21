@@ -13,24 +13,22 @@
   </head>
 
   <body>
-
-    <nav class="navbar fixed-top" data-controller="navbar" data-action="scroll@window->navbar#updateNavbar">
+    <nav class="navbar-home fixed-top" data-controller="navbar" data-action="scroll@window->navbar#updateNavbar">
       <ul>
-      <li>
-        <div class="logo"></div>
-      </li>
-      <div class="nav-connexion">
         <li>
-          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-sign-up"%>
+          <div class="logo"></div>
         </li>
-        <li>
-          <%= link_to "Sign in", new_user_session_path, class: "btn btn-sign-in" %>
-        </li>
-        <li>
-          <%= button_to "logout", destroy_user_session_path, method: :delete %>
-        </li>
-      </div>
-
+        <div class="nav-connexion">
+          <li>
+            <%= link_to "Sign up", new_user_registration_path, class: "btn btn-sign-up"%>
+          </li>
+          <li>
+            <%= link_to "Sign in", new_user_session_path, class: "btn btn-sign-in" %>
+          </li>
+          <li>
+            <%= button_to "logout", destroy_user_session_path, method: :delete %>
+          </li>
+        </div>
       </ul>
     </nav>
 
