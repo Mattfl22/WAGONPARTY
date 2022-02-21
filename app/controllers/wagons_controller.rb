@@ -11,6 +11,7 @@ class WagonsController < ApplicationController
 
   def new
     @wagon = Wagon.new
+    @user = User.find(params[:user_id])
   end
 
   def create
@@ -23,7 +24,7 @@ class WagonsController < ApplicationController
 
   private
 
-  def before_action
+  def find_wagon
     @wagon = Wagon.find(params[:id])
   end
 
