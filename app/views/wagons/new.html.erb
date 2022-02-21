@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Add a new wagon</h1>
+
+  <%= simple_form_for [ @user, @wagon ] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :capacity %>
+    <%= f.submit "Add wagon", class: "btn btn-primary" %>
+  <% end %>
+</div>
