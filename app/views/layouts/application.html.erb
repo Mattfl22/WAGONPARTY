@@ -21,11 +21,14 @@
       </li>
       <div class="nav-connexion">
         <li>
-        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-sign-up"%>
-      </li>
-      <li>
-        <%= link_to "Sign in", new_user_session_path, class: "btn btn-sign-in" %>
-      </li>
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-sign-up"%>
+        </li>
+        <li>
+          <%= link_to "Sign in", new_user_session_path, class: "btn btn-sign-in" %>
+        </li>
+        <li>
+          <%= button_to "logout", destroy_user_session_path, method: :delete %>
+        </li>
       </div>
 
       </ul>
