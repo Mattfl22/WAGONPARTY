@@ -6,4 +6,6 @@ class User < ApplicationRecord
   USER_TYPE = ["I have a wagon to rent", "I'm looking for a wagon to partayyy"]
   validates :first_name, :last_name, :user_type, presence: true
   validates :user_type, inclusion: { in: USER_TYPE }
+
+  has_many :bookings
 end
