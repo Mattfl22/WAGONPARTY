@@ -1,0 +1,21 @@
+.card-container {
+display: flex;
+justify-content: space-between;
+margin: 50px 50px;
+}
+.card {
+  color: $pink;
+  background-color: whitesmoke;
+  border-radius: 4px;
+  border: 0px;
+  text-align: center;
+}
+
+.card .btn {
+  color:white;
+  opacity:0.6;
+}
+
+.card .btn:hover {
+  opacity: 1;
+}
