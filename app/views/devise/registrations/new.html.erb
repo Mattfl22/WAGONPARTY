@@ -9,6 +9,7 @@
                   required: true %>
       <%= f.input :last_name,
                   required: true %>
+      <%# add a dropdown that displays the 1st value of the array to the user but store the second one (Provider or CLient) %>
       <%= f.input :user_type,
                   collection: User::USER_TYPE, label_method: :first, value_method: :second,
                   required: true%>
