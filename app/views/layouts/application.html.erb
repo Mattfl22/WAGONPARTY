@@ -13,6 +13,24 @@
   </head>
 
   <body>
+
+    <nav>
+      <ul>
+      <li>
+        <div class="logo"></div>
+      </li>
+      <div class="nav-connexion">
+        <li>
+        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-sign-up"%>
+      </li>
+      <li>
+        <%= link_to "Sign in", new_user_session_path, class: "btn btn-sign-in" %>
+      </li>
+      </div>
+
+      </ul>
+    </nav>
+
     <%= yield %>
 
     <footer>
@@ -31,6 +49,10 @@
         <a href="">FAQs</a>
       </div>
     </footer>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+
 
   </body>
 </html>
