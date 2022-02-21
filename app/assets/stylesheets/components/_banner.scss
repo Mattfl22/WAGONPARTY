@@ -1,0 +1,83 @@
+.banner-landing {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+  background-position: center;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-size: cover;
+
+
+ > h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #FF0094,
+    0 0 82px #FF0094,
+    0 0 92px #FF0094,
+    0 0 102px #FF0094,
+    0 0 151px #FF0094;
+    animation: flicker 2s infinite alternate;
+    color: #fff;
+  }
+
+  > .banner-form {
+    padding: 10px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 0;
+    border-radius: 4px;
+
+    > input {
+      border: 0;
+      padding: 10px;
+    }
+    > input:focus-visible {
+      outline: none;
+    }
+
+    > .btn-submit {
+      padding: 10px 10px;
+      border-radius: 4px;
+      color: white;
+      background-color: #7A0BC0;
+    }
+  }
+}
+
+
+/* Flickering animation */
+@keyframes flicker {
+
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+      text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #FF0094,
+      0 0 80px #FF0094,
+      0 0 90px #FF0094,
+      0 0 100px #FF0094,
+      0 0 150px #FF0094;
+
+  }
+
+  20%, 24%, 55% {
+      text-shadow: none;
+  }
+}
+
+
+.test {
+  height: 900px;
+}

@@ -11,3 +11,15 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// Your CSS components
+@import "components/_navbar";
+@import "components/_banner";
+
+
+
+// Adding some generic style
+
+.container {
+  margin-top: 100px;
+}
