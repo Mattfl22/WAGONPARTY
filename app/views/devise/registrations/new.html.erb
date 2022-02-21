@@ -9,6 +9,7 @@
     <%= f.input :last_name,
                 required: true %>
     <%= f.input :user_type,
+                collection: User::USER_TYPE,
                 required: true %>
     <%= f.input :email,
                 required: true,
