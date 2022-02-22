@@ -1,18 +1,16 @@
 class BookingsController < ApplicationController
   def new
     @booking = Booking.new
+    authorize @booking
     @wagon = Wagon.find(params[:wagon_id])
-    @user = User.find(params[:user_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
     @wagon = Wagon.find(params[:wagon_id])
-    # @user = User.find(params[:user_id])
     @booking.wagon = @wagon
-    @booking.user = current_user
     @booking.save
-    redirect_to wagons_path(@user)
+    redirect_to user_path(current_user)
   end
 
   private

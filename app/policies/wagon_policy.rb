@@ -23,5 +23,4 @@ class WagonPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
-
 end
