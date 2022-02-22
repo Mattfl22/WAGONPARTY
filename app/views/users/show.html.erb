@@ -5,4 +5,12 @@
   <% @user.bookings.each do |booking|%>
   <li><%= "📅 #{booking.start_date} - #{booking.end_date}: From #{booking.start_location} to #{booking.end_location} 🚃" %></li>
   <% end %>
+    <% if policy(Wagon).create? %>
+      <%= link_to "New wagon", new_user_wagon_path(@user) %>
+      <% @wagons.each do |wagon| %>
+        <% if policy(wagon).edit? %>
+          <%= link_to "Update", edit_wagon_path(wagon) %>
+        <% end %>
+      <% end %>
+    <% end %>
 </div>
