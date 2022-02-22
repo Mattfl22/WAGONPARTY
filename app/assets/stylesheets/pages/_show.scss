@@ -48,11 +48,27 @@
 }
 
 .btn {
-  margin-top: 10px;
   color: white;
+  margin-left: 10px;
 }
 
 .card-description {
   max-width: 500px;
   margin-left: 8px;
+}
+
+.date-list {
+  list-style: none;
+  width: 100%
+}
+
+.card-booking {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid lightgray;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  width: 80%
 }
