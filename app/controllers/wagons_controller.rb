@@ -32,6 +32,6 @@ class WagonsController < ApplicationController
   end
 
   def wagon_params
-    params.require(:wagon).permit(:name, :description, :user_id, :capacity)
+    params.require(:wagon).permit(:name, :description, :user_id, :capacity, :photo)
   end
 end
