@@ -50,6 +50,14 @@
       border-radius: 4px;
       color: white;
       background-color: #7A0BC0;
+      border: 1px solid white;
+
+    }
+
+    > .btn-submit:hover {
+      color:  #7A0BC0;
+      background-color: white;
+      border: 1px solid #7A0BC0;
     }
   }
 }
