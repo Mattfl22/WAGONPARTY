@@ -13,7 +13,7 @@ puts "Initializing FAKER..."
 @user.save!
 
 10.times do
-  wagon = Wagon.new(name: Faker::Beer.brand, description: Faker::Quotes::Shakespeare, capacity: 8)
+  wagon = Wagon.new(name: Faker::Beer.brand, description: Faker::Quotes::Shakespeare.hamlet_quote, capacity: 8)
   wagon.user = @user
   wagon.save!
 end
