@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+puts "Initializing FAKER..."
+
+@user = User.new(email: Faker::Internet.email, first_name: 'user', last_name: 'test', user_type: 'Provider', password: 'testtest')
+@user.save!
+
+10.times do
+  wagon = Wagon.new(name: Faker::Beer.brand, description: Faker::Quotes::Shakespeare, capacity: 8)
+  wagon.user = @user
+  wagon.save!
+end
+
+puts 'All done'
