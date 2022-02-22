@@ -1,16 +1,27 @@
 <div class="container">
-  <h1><%= "Welcome #{@user.first_name}" %></h1>
+  <h1 class='border-bottom'><%= "Welcome #{@user.first_name}" %></h1>
 
   <h2>Your bookings</h2>
   <% @user.bookings.each do |booking|%>
   <li><%= "📅 #{booking.start_date} - #{booking.end_date}: From #{booking.start_location} to #{booking.end_location} 🚃" %></li>
   <% end %>
-    <% if policy(Wagon).create? %>
-      <%= link_to "New wagon", new_user_wagon_path(@user) %>
-      <% @wagons.each do |wagon| %>
-        <% if policy(wagon).edit? %>
-          <%= link_to "Update", edit_wagon_path(wagon) %>
-        <% end %>
+
+  <div class="wagons-header d-flex align-items-center mb-3">
+    <h2 class='m-0'>Your wagons</h2>
+      <% if policy(Wagon).create? %>
+        <%= link_to "New wagon", new_user_wagon_path(@user), class:'btn btn-success m-0 ms-3' %>
       <% end %>
+  </div>
+    <% @wagons.each do |wagon| %>
+      <div class="card-user-show d-flex border bg-light">
+        <img src="https://images.unsplash.com/photo-1603092700399-2da0c724075c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="">
+        <div class="card-user-details ms-4">
+          <h4 class="m-0"> <%= wagon.name %></h4>
+          <p class="m-0"> <%= wagon.description %></p>
+          <% if policy(wagon).edit? %>
+            <%= link_to "Update", edit_user_wagon_path(wagon), class: 'btn btn-primary' %>
+          <% end %>
+        </div>
+      </div>
     <% end %>
 </div>
