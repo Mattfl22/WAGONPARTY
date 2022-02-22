@@ -13,7 +13,7 @@ Wagon.destroy_all
 
 puts "Initializing FAKER..."
 
-@user = User.new(email: Faker::Internet.email, first_name: 'user', last_name: 'test', user_type: 'Provider', password: 'testtest')
+@user = User.new(email: Faker::Internet.email, first_name: 'user', last_name: 'test', password: 'testtest')
 @user.save!
 
 10.times do
