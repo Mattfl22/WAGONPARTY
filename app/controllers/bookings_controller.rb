@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.wagon = @wagon
     @booking.user = @user
     @booking.save
-    redirect_to user_wagons_path(@user)
+    redirect_to wagons_path(@user)
   end
 
   private
