@@ -1,10 +1,18 @@
 nav {
   background-color: transparent;
   transition: 0.5s background-color ease;
+  margin: 0px 50px;
+
+
 }
 
 .navbar-white {
   background-color: white;
+  color: #000;
+
+  > .btn-nav-connexion, .logo {
+    color: #000;
+  }
 
 }
 nav > ul{
@@ -12,38 +20,71 @@ nav > ul{
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  padding: 20px;
   list-style: none;
-  margin: 0px 50px;
   width: 100%;
+  margin: 0;
 
 }
 
 .logo {
-  background-color: #FA58B6;
-  padding: 25px;
-  border-radius: 50%;
-}
-
-.btn {
-  padding: 5px 15px;
+  border: 2px solid white;
+  padding: 5px 25px;
   border-radius: 4px;
+  color: white;
 }
 
 .nav-connexion {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 8%;
+}
+
+.btn-nav-connexion {
+  padding: 5px 15px;
+  border-radius: 4px;
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
 }
 
 .btn-sign-up {
-  color: white;
-  background-color: #FA58B6;
   margin-right: 10px;
+}
+
+// Button hover
+
+
+.btn-nav-connexion:after,
+.btn-nav-connexion:before {
+backface-visibility: hidden;
+border: 1px solid rgba(#fff, 0);
+bottom: 0px;
+content: " ";
+display: block;
+margin: 0 auto;
+position: relative;
+transition: all 280ms ease-in-out;
+width: 0;
+text-decoration: none;
+}
+
+.btn-nav-connexion:hover:after,
+.btn-nav-connexion:hover:before {
+backface-visibility: hidden;
+border-color: #fff;
+transition: width 350ms ease-in-out;
+width: 70%;
+color: white;
 
 }
 
-.btn-sign-in {
-  background-color: #7A0BC0;
-  color: white;
+.btn-nav-connexion:hover:before {
+bottom: auto;
+top: 0;
+width: 70%;
+color: white;
+
 }
+
+// End hover
