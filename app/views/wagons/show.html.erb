@@ -10,8 +10,21 @@
           <p>Join the rave</p>
           <p>xxx€</p>
           <p>05/03/22 </p>
-          <%= link_to "BOOK NOW !", "", :class => "btn btn-success rounded" %>
+          <%= link_to "BOOK NOW !", new_wagon_booking_path(@wagon), :class => "btn btn-success rounded" %>
         </div>
+      </div>
+      <div class="card-product">
+          <ul class="date-list">
+            <% @wagon.available_dates.each do |date|%>
+              <div class="card-booking">
+                <div class="card-booking-description">
+                  <li><h2> <%= date %> </h2>
+                  <p> <%= @wagon.description %> </p>
+                </div>
+                <%= link_to "BOOK NOW !", "", :class => "btn btn-success btn-sm rounded" %></li>
+              </div>
+            <% end %>
+          </ul>
       </div>
       <div class="card-product">
         <div class="card-description">
