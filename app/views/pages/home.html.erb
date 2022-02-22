@@ -14,29 +14,16 @@
 <div class="container">
   <h1 style='font-weight: bold'>Our top recommendations</h1>
   <div class="card-container">
-    <div class="card" style="width: 20rem;">
-      <img src="https://images.unsplash.com/photo-1599766431396-2405fdfcf5e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" class="card-img-top" alt="Wagon Picture">
-      <div class="card-body">
-        <h5 class="card-title"> <strong>Wagon name</strong></h5>
-        <p class="card-text">Some quick description on how to have an amazing rave in this wagon.</p>
-        <a href="#" class="btn btn-info"> Get the rave going</a>
+    <% @wagons = Wagon.all.sample(3) %>
+    <% @wagons.each do |wagon|%>
+      <div class="card" style="width: 20rem;">
+        <img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Wagon Picture">
+        <div class="card-body">
+          <h5 class="card-title"> <strong><%= wagon.name %></strong></h5>
+          <p class="card-text"><%= wagon.description %></p>
+          <a href="#" class="btn btn-info"> Get the rave going</a>
+        </div>
       </div>
-    </div>
-    <div class="card" style="width: 20rem;">
-      <img src="https://images.unsplash.com/photo-1599766431396-2405fdfcf5e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" class="card-img-top" alt="Wagon Picture">
-      <div class="card-body">
-        <h5 class="card-title"> <strong>Wagon name</strong></h5>
-        <p class="card-text">Some quick description on how to have an amazing rave in this wagon.</p>
-        <a href="#" class="btn btn-info"> Get the rave going</a>
-      </div>
-    </div>
-    <div class="card" style="width: 20rem;">
-      <img src="https://images.unsplash.com/photo-1599766431396-2405fdfcf5e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" class="card-img-top" alt="Wagon Picture">
-      <div class="card-body">
-        <h5 class="card-title"> <strong>Wagon name</strong></h5>
-        <p class="card-text">Some quick description on how to have an amazing rave in this wagon.</p>
-        <a href="#" class="btn btn-info"> Get the rave going</a>
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>
