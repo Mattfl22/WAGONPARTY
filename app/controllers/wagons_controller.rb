@@ -3,14 +3,16 @@ class WagonsController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:create, :new]
 
   def index
-    @wagons = Wagon.all
+    @wagons = policy_scope(Wagon).order(created_at: :desc)
   end
 
   def show
+    authorize @wagon
   end
 
   def new
     @wagon = Wagon.new
+    authorize @wagon
     @user = User.find(params[:user_id])
   end
 
