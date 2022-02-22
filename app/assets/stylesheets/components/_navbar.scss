@@ -1,20 +1,9 @@
 nav {
   background-color: transparent;
   transition: 0.5s background-color ease;
-  margin: 0px 50px;
-
-
 }
 
-.navbar-white {
-  background-color: white;
-  color: #000;
 
-  > .btn-nav-connexion, .logo {
-    color: #000;
-  }
-
-}
 nav > ul{
   display: flex;
   align-items: center;
@@ -23,6 +12,7 @@ nav > ul{
   list-style: none;
   width: 100%;
   margin: 0;
+  padding: 0 50px;
 
 }
 
@@ -48,9 +38,6 @@ nav > ul{
   text-decoration: none;
 }
 
-.btn-sign-up {
-  margin-right: 10px;
-}
 
 // Button hover
 
@@ -88,3 +75,18 @@ color: white;
 }
 
 // End hover
+
+
+.navbar-white {
+  background-color: white;
+
+  > .btn-nav-connexion {
+    color: #000;
+  }
+
+  > .logo {
+    color: #000;
+    border-color: #000;
+  }
+
+}
