@@ -5,12 +5,12 @@
     <% @wagons.each do |wagon| %>
       <div class="wagon-result border d-flex justify-content-center p-3 mb-2 bg-white" style="width: 50%">
 
-        <img class="card-img-top" style="width: 150px; border-radius: 4px; object-fit: contain" src="https://images.unsplash.com/photo-1583942449156-08f42da51e0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1263&q=80" alt="Card image cap">
+        <img class="card-img-top" style="width: 150px; border-radius: 4px; object-fit: contain; margin-left: 10px" src="https://images.unsplash.com/photo-1583942449156-08f42da51e0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1263&q=80" alt="Card image cap">
 
         <div class="card-body" style="margin-left: 20px"%>
           <h5 class="card-title"><%= wagon.name %></h5>
           <p class="card-text"><%= wagon.description %></p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a> <%= link_to "Select this wagon", wagon_path(wagon), class: 'btn btn-primary' %> </a>
         </div>
 
       </div>
