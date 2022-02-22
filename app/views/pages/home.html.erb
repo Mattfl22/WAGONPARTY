@@ -22,7 +22,7 @@
         <div class="card-body">
           <h5 class="card-title"> <strong><%= wagon.name %></strong></h5>
           <p class="card-text"><%= wagon.description %></p>
-          <a href="#" class="btn btn-info"> Get the rave going</a>
+          <p> <%= link_to "Get the rave going", wagon_path(wagon), class: "btn btn-info" %></a>
         </div>
       </div>
     <% end %>
