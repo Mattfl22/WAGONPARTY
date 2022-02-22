@@ -19,7 +19,7 @@ class WagonsController < ApplicationController
     @user = User.find(params[:user_id])
     @wagon.user = @user
     @wagon.save
-    redirect_to user_wagons_path(@user)
+    redirect_to wagons_path(@user)
   end
 
   private
