@@ -19,6 +19,9 @@ puts "Initializing FAKER..."
 10.times do
   wagon = Wagon.new(name: Faker::Beer.brand, description: Faker::Quotes::Shakespeare.hamlet_quote, capacity: 8, available_dates: ["20/06/2022", "03/04/2023"] )
   wagon.user = @user
+  file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Carro_merci_Ravenna.JPG/440px-Carro_merci_Ravenna.JPG")
+
+  wagon.photo.attach(io: file, filename: 'wagon.jpg', content_type: 'image/jpg')
   wagon.save!
 end
 
