@@ -1,6 +1,8 @@
 nav {
   background-color: transparent;
   transition: 0.5s background-color ease;
+  padding: 20px 50px;
+
 }
 
 
@@ -12,8 +14,7 @@ nav > ul{
   list-style: none;
   width: 100%;
   margin: 0;
-  padding: 0 50px;
-
+  padding: 0;
 }
 
 .logo {
@@ -21,6 +22,8 @@ nav > ul{
   padding: 5px 25px;
   border-radius: 4px;
   color: white;
+  text-decoration: none;
+  font-family: 'Permanent Marker', cursive;
 }
 
 .nav-connexion {
@@ -39,7 +42,7 @@ nav > ul{
   text-decoration: none;
 }
 
-.navbar-white {
+.navbar-black {
   background-color: black;
 
 }
