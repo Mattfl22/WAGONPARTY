@@ -4,7 +4,7 @@
   <div class="container">
     <div class="margin">
       <div class="card-product">
-        <img src="https://images.ctfassets.net/r1xeyn8lz4i6/43cKUckljj4lTcSUrK6FyC/a5840a7931af523e5f161e415a1af41b/201_by_night_inside.jpg?w=1920"/>
+        <img class='rounded' src="https://images.ctfassets.net/r1xeyn8lz4i6/43cKUckljj4lTcSUrK6FyC/a5840a7931af523e5f161e415a1af41b/201_by_night_inside.jpg?w=1920"/>
         <div class="card-product-infos">
           <h2>Wagon <%= @wagon.name %></h2>
           <p>Join the rave</p>
@@ -19,9 +19,8 @@
         </div>
         <div class="card-product-infos">
           <p>Departure from <strong><%= @wagon.location %></strong>.</p>
-          <p>Gare de <%= @wagon.location %>, <%= @wagon.dates[0] %></p>
+          <p>Gare de <%= @wagon.location %>
           <p>Direction Marseille !</p>
-          <p>Contact : XXX</p>
         </div>
       </div>
         <div class="card-product">
