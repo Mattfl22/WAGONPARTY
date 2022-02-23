@@ -4,7 +4,7 @@
   <div class="container">
     <div class="margin">
       <div class="card-product">
-        <img class='rounded' src="https://images.ctfassets.net/r1xeyn8lz4i6/43cKUckljj4lTcSUrK6FyC/a5840a7931af523e5f161e415a1af41b/201_by_night_inside.jpg?w=1920"/>
+        <img src="https://images.ctfassets.net/r1xeyn8lz4i6/43cKUckljj4lTcSUrK6FyC/a5840a7931af523e5f161e415a1af41b/201_by_night_inside.jpg?w=1920"/>
         <div class="card-product-infos">
           <h2>Wagon <%= @wagon.name %></h2>
           <p>Join the rave</p>
@@ -18,23 +18,50 @@
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
         </div>
         <div class="card-product-infos">
-          <p>Departure from <strong><%= @wagon.location %></strong>.</p>
-          <p>Gare de <%= @wagon.location %>
+          <p>Departure from <strong>Paris</strong>.</p>
+          <p>Gare de Lyon, Samedi 05 Mars, 20h</p>
           <p>Direction Marseille !</p>
+          <p>Contact : XXX</p>
         </div>
       </div>
         <div class="card-product">
           <ul class="date-list">
-            <% @wagon.dates.each do |date|%>
+            <% @wagon.available_dates.each_with_index do |date, index|%>
               <div class="card-booking">
                 <div class="card-booking-description">
                   <li><h2> <%= date %> </h2>
                   <p> <%= @wagon.description %> </p>
                 </div>
-                <%= link_to "BOOK NOW !", "", :class => "btn btn-success btn-sm rounded" %></li>
+                <%#= link_to "BOOK NOW !", "", :class => "btn btn-success btn-sm rounded" %></li>
+
+                <!-- Button trigger modal -->
+                  <%= button_tag "BOOK NOW !",  class: "btn btn-primary", data: { 'bs-toggle' => "modal", 'bs-target' => "#confirmationModal#{index}" } %>
+                <% id = "confirmationModal#{index}" %>
+              <div class="modal" id="<%=id%>" tabindex="-1">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Booking confirmation</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Your booking for <%=@wagon.name%> on the <%=date%></p>
+                      <%# Rajouter wagon.location %>
+                      <p>Do you wish to continue?</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <%= link_to wagon_bookings_path(@wagon, params: {date: ...}) do%>
+                        <button type="button" class="btn btn-primary">Save booking</button>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
               </div>
             <% end %>
           </ul>
+
       </div>
     </div>
   </div>
