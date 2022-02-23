@@ -1,1 +1,36 @@
 // Specific CSS for your home-page
+
+.home-features {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+
+  > .feature-card {
+      padding: 20px 50px;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+  }
+
+  > .feature-card-1, .feature-card-3{
+    margin-right: 40%;
+    color: white;
+  }
+  > .feature-card-2{
+    margin-left: 40%;
+    color: white;
+
+  }
+
+
+
+}
+
+
+.feature-image > img {
+  width: 400px;
+
+}
