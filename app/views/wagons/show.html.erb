@@ -4,12 +4,11 @@
   <div class="container">
     <div class="margin">
       <div class="card-product">
-<<<<<<< HEAD
+      <% if @wagon.photo.key %>
         <%= cl_image_tag @wagon.photo.key, crop: :fill %>
-        <%# <img src="https://images.unsplash.com/photo-1599766431396-2405fdfcf5e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"/> %>
-=======
-        <img src="https://images.ctfassets.net/r1xeyn8lz4i6/43cKUckljj4lTcSUrK6FyC/a5840a7931af523e5f161e415a1af41b/201_by_night_inside.jpg?w=1920"/>
->>>>>>> fd56ca1731391af60662d26149f8de44c899c75c
+      <% else %>
+        <img src="https://images.unsplash.com/photo-1599766431396-2405fdfcf5e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"/>
+      <% end %>
         <div class="card-product-infos">
           <h2>Wagon <%= @wagon.name %></h2>
           <p>Join the rave</p>

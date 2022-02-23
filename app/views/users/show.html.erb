@@ -14,7 +14,11 @@
   </div>
     <% @wagons.each do |wagon| %>
       <div class="card-user-show d-flex border bg-light">
-        <img src="https://images.unsplash.com/photo-1603092700399-2da0c724075c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="">
+        <% if wagon.photo.key %>
+          <%= cl_image_tag wagon.photo.key, crop: :fill %>
+        <% else %>
+          <img src="https://images.unsplash.com/photo-1599766431396-2405fdfcf5e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"/>
+        <% end %>
         <div class="card-user-details ms-4">
           <h4 class="m-0"> <%= wagon.name %></h4>
           <p class="m-0"> <%= wagon.description %></p>
