@@ -1,6 +1,5 @@
 <div>
-  <div class="background-image-blurred">
-  </div>
+  <div class="background-image-blurred"></div>
   <div class="container">
     <div class="margin">
       <div class="card-product">
@@ -26,42 +25,41 @@
       </div>
         <div class="card-product">
           <ul class="date-list">
-            <% @wagon.available_dates.each_with_index do |date, index|%>
+            <% @wagon.dates.each_with_index do |date, index|%>
               <div class="card-booking">
                 <div class="card-booking-description">
                   <li><h2> <%= date %> </h2>
                   <p> <%= @wagon.description %> </p>
                 </div>
-                <%#= link_to "BOOK NOW !", "", :class => "btn btn-success btn-sm rounded" %></li>
+                <%# <%= link_to "BOOK NOW !", "", :class => "btn btn-success btn-sm rounded" %>
 
                 <!-- Button trigger modal -->
-                  <%= button_tag "BOOK NOW !",  class: "btn btn-primary", data: { 'bs-toggle' => "modal", 'bs-target' => "#confirmationModal#{index}" } %>
+                <%= button_tag "BOOK NOW !",  class: "btn btn-primary", data: { 'bs-toggle' => "modal", 'bs-target' => "#confirmationModal#{index}" } %>
                 <% id = "confirmationModal#{index}" %>
-              <div class="modal" id="<%=id%>" tabindex="-1">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">Booking confirmation</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <p>Your booking for <%=@wagon.name%> on the <%=date%></p>
-                      <%# Rajouter wagon.location %>
-                      <p>Do you wish to continue?</p>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <%= link_to wagon_bookings_path(@wagon, params: {date: ...}) do%>
-                        <button type="button" class="btn btn-primary">Save booking</button>
-                      <% end %>
+                <div class="modal" id="<%=id%>" tabindex="-1">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Booking confirmation</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <p>Your booking for <%=@wagon.name%> on the <%=date%> from <%@wagon.location %> </p>
+                        <p>Do you wish to continue?</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <%= link_to wagon_bookings_path(@wagon, params: { booking: {start_date: date, start_location: @wagon.location, wagon_id: @wagon.id} }), method: :post do %>
+                          <button type="button" class="btn btn-primary">Save booking</button>
+                        <% end %>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              </div>
             <% end %>
           </ul>
-
+        </div>
       </div>
     </div>
   </div>

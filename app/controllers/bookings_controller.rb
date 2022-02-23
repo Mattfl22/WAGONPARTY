@@ -7,15 +7,21 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    authorize @booking
     @wagon = Wagon.find(params[:wagon_id])
     @booking.wagon = @wagon
-    @booking.save
-    redirect_to user_path(current_user)
+    @booking.user = current_user
+    if @booking.save
+      redirect_to user_path(current_user)
+    else
+      redirect_to wagon_path(@wagon)
+    end
+
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :start_location, :end_location, :user_id, :wagon_id)
+    params.require(:booking).permit(:start_date, :start_location)
   end
 end
