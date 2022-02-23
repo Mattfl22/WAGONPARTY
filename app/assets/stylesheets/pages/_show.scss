@@ -30,6 +30,14 @@
   object-fit: cover;
 }
 
+.card-img-top-result > img {
+  height: 100%;
+  width: 180px;
+  border-radius: 4px;
+  object-fit: contain;
+  margin-left: 8px
+}
+
 .card-product h2 {
   font-size: 16px;
   font-weight: bold;
