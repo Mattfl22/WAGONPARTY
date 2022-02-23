@@ -1,6 +1,17 @@
 .alert {
   position: fixed;
-  bottom: 16px;
+  top: 64px;
   right: 16px;
   z-index: 1000;
+  color: white;
+
+}
+
+.notice {
+  position: fixed;
+  top: 92px;
+  right: 16px;
+  z-index: 1000;
+  color: white;
+
 }
