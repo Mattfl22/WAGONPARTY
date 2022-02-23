@@ -6,7 +6,7 @@ class WagonsController < ApplicationController
     @wagons = policy_scope(Wagon).order(created_at: :desc)
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @wagons = Wagon.all
-    @markers = @wagons.geocoded.map do |flat|
+    @markers = @wagons.geocoded.map do |wagon|
       {
         lat: wagon.latitude,
         lng: wagon.longitude
