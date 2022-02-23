@@ -2,22 +2,27 @@
 <div class="container">
   <h1>Our Wagons</h1>
   <div class="d-flex align-items-start">
-    <div class="wagons-card flex-row">
+    <div class="wagons-card flex-row" style="width: 50%">
       <% @wagons.each do |wagon| %>
-        <div class="wagon-result border d-flex justify-content-center p-3 mb-2 bg-white" style="width: 50%">
-
-          <img class="card-img-top" style="width: 150px; border-radius: 4px; object-fit: contain; margin-left: 10px" src="https://images.unsplash.com/photo-1583942449156-08f42da51e0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1263&q=80" alt="Card image cap">
+        <div class="wagon-result border d-flex justify-content-center p-3 mb-2">
+          <img class="card-img-top rounded" style="width: 150px; border-radius: 4px; object-fit: cover; margin-left: 10px" src="https://images.unsplash.com/photo-1583942449156-08f42da51e0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1263&q=80" alt="Card image cap">
 
           <div class="card-body" style="margin-left: 20px"%>
             <h5 class="card-title"><%= wagon.name %></h5>
-            <p class="card-text"><%= wagon.description %></p>
+            <p>🚆 Departure: <%= wagon.location %></p>
+            <div class="dates-display d-flex">
+              <p class="me-2">📅 Available dates:</p>
+              <% wagon.dates.each do |date| %>
+                <%= date %>
+              <% end %>
+            </div>
             <a> <%= link_to "Select this wagon", wagon_path(wagon), class: 'btn btn-primary' %> </a>
           </div>
-
         </div>
       <% end %>
     </div>
-      <div class="d-flex" style="width: 50%; height: 600px;"
+
+      <div class="sticky-top ms-3 rounded" style="width: 50%; height: 600px;"
         data-controller="mapbox"
         data-mapbox-markers-value="<%= @markers.to_json %>"
         data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
