@@ -17,7 +17,13 @@ puts "Initializing FAKER..."
 @user.save!
 
 10.times do
-  wagon = Wagon.new(name: Faker::Beer.brand, description: Faker::Quotes::Shakespeare.hamlet_quote, capacity: 8, available_dates: ["20/06/2022", "03/04/2023"] )
+  wagon = Wagon.new(
+    name: Faker::Beer.brand,
+    description: Faker::Quotes::Shakespeare.hamlet_quote,
+    capacity: 8,
+    available_dates: ["20/06/2022", "03/04/2023"],
+    location: ["Paris", "Lyon", "Marseille", "Rennes", "Strasbourg", "Biarritz", "Toulouse"].sample
+  )
   wagon.user = @user
   wagon.save!
 end
