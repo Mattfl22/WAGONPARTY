@@ -9,6 +9,8 @@
 @import "font-awesome";
 // Map box style
 @import "mapbox-gl/dist/mapbox-gl";
+@import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
+
 
 // Your CSS partials
 @import "components/index";
@@ -20,6 +22,9 @@
 
 // Adding some generic style
 
+body {
+  background-color: black;
+}
 .container {
   margin-top: 100px;
   background-color: white;

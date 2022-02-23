@@ -3,7 +3,7 @@
 
   <h2>Your bookings</h2>
   <% @user.bookings.each do |booking|%>
-  <li><%= "📅 #{booking.start_date} - #{booking.end_date}: From #{booking.start_location} to #{booking.end_location} 🚃" %></li>
+  <li><%= "📅 #{booking.start_date}: From #{booking.start_location} 🚃" %></li>
   <% end %>
 
   <div class="wagons-header d-flex align-items-center mb-3">
