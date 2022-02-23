@@ -13,12 +13,6 @@
 @import "pages/index";
 @import "pages/signin";
 
-// Your CSS components
-@import "components/_navbar";
-@import "components/_banner";
-@import "components/_wagon-result";
-@import "components/_card-user-show";
-
 
 // Adding some generic style
 
@@ -28,4 +22,9 @@
 
 a:hover {
   color: white;
+}
+
+body {
+  color: black;
+  background-color: black;
 }

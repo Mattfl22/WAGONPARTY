@@ -16,18 +16,26 @@
     <nav class="navbar-home fixed-top" data-controller="navbar" data-action="scroll@window->navbar#updateNavbar">
       <ul>
         <li>
-          <div class="logo">Logo</div>
+            <%= link_to "Wagon party", root_path, class: "logo"%>
         </li>
         <div class="nav-connexion">
-          <li>
-            <%= link_to "Sign up", new_user_registration_path, class: "btn-nav-connexion btn-sign-up"%>
-          </li>
-          <li>
-            <%= link_to "Sign in", new_user_session_path, class: "btn-nav-connexion btn-sign-in" %>
-          </li>
-          <%# <li>
-            <%= button_to "logout", destroy_user_session_path, method: :delete
-          </li> %>
+          <% if user_signed_in? %>
+            <li class="nav-item"></li>
+            <li class="nav-item dropdown">
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to "Dashboard", "#", class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              </div>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%=  link_to "Sign in", new_user_session_path, class: "btn-nav-connexion btn-sign-in"%>
+            </li>
+            <li>
+              <%= link_to "Sign up", new_user_registration_path, class: "btn-nav-connexion btn-sign-up" %>
+            </li>
+          <% end %>
         </div>
       </ul>
     </nav>

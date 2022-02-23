@@ -1,12 +1,10 @@
 <%# Landing page %>
 <div class="banner-landing">
-  <%= video_tag "video-banner", autoplay: :autoplay, loop: :loop, muted: :muted, class: "banner-video" %>
+  <%# <%= video_tag "pexel-video-test", autoplay: :autoplay, loop: :loop, muted: :muted, class: "banner-video" %>
   <h1 class="banner-h1">Welcome to the Wagon Party</h1>
   <form action="#" class="banner-form">
     <input type="text" placeholder="Start Location">
-    <input type="text" placeholder="End Location">
     <input type="date" placeholder="Check in">
-    <input type="date" placeholder="Check Out">
     <%=link_to "Let's Go!", wagons_path, class:"btn-submit"%>
   </form>
 </div>
@@ -20,7 +18,7 @@
         <div class="card-body">
           <h5 class="card-title"> <strong><%= wagon.name %></strong></h5>
           <p class="card-text"><%= wagon.description %></p>
-          <a href="#" class="btn btn-info"> Get the rave going</a>
+          <p> <%= link_to "Get the rave going", wagon_path(wagon), class: "btn btn-info" %></a>
         </div>
       </div>
     <% end %>
