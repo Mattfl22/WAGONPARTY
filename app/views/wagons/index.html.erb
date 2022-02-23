@@ -1,7 +1,6 @@
 
 <div class="container">
   <h1>Our Wagons</h1>
-<<<<<<< HEAD
   <div class="wagons-card">
     <% @wagons.each do |wagon| %>
       <div class="wagon-result border d-flex justify-content-center p-3 mb-2 bg-white" style="width: 50%">
@@ -11,21 +10,6 @@
           <h5 class="card-title"><%= wagon.name %></h5>
           <p class="card-text"><%= wagon.description %></p>
           <a> <%= link_to "Select this wagon", wagon_path(wagon), class: 'btn btn-primary' %> </a>
-=======
-  <div class="d-flex align-items-start">
-    <div class="wagons-card flex-row">
-      <% @wagons.each do |wagon| %>
-        <div class="wagon-result border d-flex justify-content-center p-3 mb-2 bg-white" style="width: 50%">
-
-          <img class="card-img-top" style="width: 150px; border-radius: 4px; object-fit: contain; margin-left: 10px" src="https://images.unsplash.com/photo-1583942449156-08f42da51e0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1263&q=80" alt="Card image cap">
-
-          <div class="card-body" style="margin-left: 20px"%>
-            <h5 class="card-title"><%= wagon.name %></h5>
-            <p class="card-text"><%= wagon.description %></p>
-            <a> <%= link_to "Select this wagon", wagon_path(wagon), class: 'btn btn-primary' %> </a>
-          </div>
-
->>>>>>> e0c844ddc9c4df60724967f76e3f174051afcb1b
         </div>
       <% end %>
       <div class="d-flex" style="width: 50%; height: 600px;"
