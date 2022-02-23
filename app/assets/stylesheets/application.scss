@@ -13,11 +13,11 @@
 @import "pages/index";
 @import "pages/signin";
 
-
 // Adding some generic style
 
 .container {
   margin-top: 100px;
+  background-color: white;
 }
 
 a:hover {
@@ -25,6 +25,5 @@ a:hover {
 }
 
 body {
-  color: black;
   background-color: black;
 }
