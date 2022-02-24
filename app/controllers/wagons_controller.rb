@@ -6,6 +6,13 @@ class WagonsController < ApplicationController
   def index
     @wagons = policy_scope(Wagon).order(created_at: :desc)
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+
+    if params[:query].present?
+      @wagons = Wagon.where("location ILIKE ?", "%#{params[:query]}%")
+    else
+      @wagons = Wagon.all
+    end
+
     @markers = @wagons.geocoded.map do |wagon|
       {
         lat: wagon.latitude,
