@@ -11,24 +11,32 @@
           <% end %>
         </div>
         <div class="card-product-infos">
-          <h2>Wagon <%= @wagon.name %></h2>
-          <p>Join the rave</p>
-          <p>xxx€</p>
-          <p>05/03/22 </p>
+          <h1>Wagon <%= @wagon.name %></h1>
+          <h4>Don't miss out on this great opportunity</h4>
+          <p> 🏷 <strong><%=rand(400..2000)%>€ / per trip</strong></p>
+          <p> 👥 <%= @wagon.capacity %> </p>
+          <div class="card-product-img d-flex">
+            <img src="/assets/feature-4.svg" alt="" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Free wifi">
+            <img src="/assets/feature-card.svg" alt="" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Payment in 3 times">
+            <img src="/assets/feature-cocktail.svg" alt="" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Open Bar">
+          </div>
         </div>
       </div>
       <div class="card-product">
         <div class="card-description">
-          <h2>A propos de ce Wagon </p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          <h2>The wagon </h2>
+          <p>This wagon is unlike any other you have ever seen. Forget about the Orient-Express or the Macchu Pichu train, this is the one you need!! Not only, it will allow you to enjoy your time with friends or family in a splendid and amusing environment but we can ensure you will end-up super drunk by the end. You will have unlimited access to the bar so be ready to party.</p>
         </div>
         <div class="card-product-infos">
-          <p>Departure from <strong>Paris</strong>.</p>
-          <p>Gare de Lyon, Samedi 05 Mars, 20h</p>
-          <p>Direction Marseille !</p>
-          <p>Contact : XXX</p>
+          <h2>Information</h2>
+          <p><strong>From:</strong> Paris</p>
+          <p><strong>To:</strong> Marseille</p>
+          <p><strong>Departure:</strong> Gare de Lyon, Samedi 05 Mars, 20h</p>
+          <p><strong>Contact :</strong> 01-02-03-04-05</p>
         </div>
       </div>
+      <div class="departure-info">
+        <h2>Upcoming departures:</h2>
         <div class="card-product">
           <ul class="date-list">
             <% @wagon.dates.each_with_index do |date, index|%>
@@ -40,7 +48,7 @@
                 <%# <%= link_to "BOOK NOW !", "", :class => "btn btn-success btn-sm rounded" %>
 
                 <!-- Button trigger modal -->
-                <%= button_tag "BOOK NOW !",  class: "btn btn-primary", data: { 'bs-toggle' => "modal", 'bs-target' => "#confirmationModal#{index}" } %>
+                <%= button_tag "BOOK NOW !",  class: "btn btn-success", data: { 'bs-toggle' => "modal", 'bs-target' => "#confirmationModal#{index}" } %>
                 <% id = "confirmationModal#{index}" %>
                 <div class="modal" id="<%=id%>" tabindex="-1">
                   <div class="modal-dialog">
