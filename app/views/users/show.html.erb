@@ -1,36 +1,49 @@
 <div class="container">
   <h1 class='border-bottom'><%= "Welcome #{@user.first_name}" %></h1>
 
-  <h2>Your bookings (<%= @user.bookings.count %>)</h2>
-  <div class="booking-cards">
+  <h2 class="mt-4 mb-4">Your bookings (<%= @user.bookings.count %>)</h2>
+
+  <div class="row">
     <% @user.bookings.each do |booking|%>
-      <div class="booking-card text-dark">
+    <div class="col-sm-6">
+      <div class="booking-card bg-black mb-3">
         <h4>Booking n° <%= booking.id %></h4>
         <li><%= "📅 Date : #{booking.start_date}" %></li>
         <li><%= "🚃 From : #{booking.start_location}" %></li>
+        <%= link_to "Cancel my booking", user_booking_path(@user), method: :delete, data: {confirm: 'Are you sure?'}, class:'booking-destroy-btn' %>
       </div>
+    </div>
     <% end %>
   </div>
 
 
-  <div class="wagons-header d-flex align-items-center mb-3">
-    <h2 class='m-0'>Your wagons (<%= @wagons.count %>)</h2>
+  <div class="wagons-header d-flex align-items-center mt-4 mb-3">
+    <h2 class='mt-0'>Your wagons (<%= @wagons.count %>)</h2>
       <% if policy(Wagon).create? %>
         <%= link_to "New wagon", new_user_wagon_path(@user), class:'btn btn-success m-0 ms-3' %>
       <% end %>
   </div>
-  <div class="booking-cards">
+
+  <div class="row">
     <% @wagons.each do |wagon| %>
-      <div class="card-user-show d-flex border bg-light">
-        <img src="https://images.unsplash.com/photo-1603092700399-2da0c724075c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="">
-        <div class="booking-card">
+    <div class="col-sm-6">
+      <div class="card-wagon bg-black border mb-3">
+        <div class="card-wagon-img">
+          <% if wagon.photo.key %>
+            <%= cl_image_tag wagon.photo.key, crop: :fill, style:'height: 100px; width: 100px; object-fit:cover; border-radius: 4px' %>
+          <% else %>
+            <img src="https://images.unsplash.com/photo-1599766431396-2405fdfcf5e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80", style='height: 100px; width: 100px; object-fit:cover; border-radius: 4px'>
+          <% end %>
+        </div>
+        <div class="card-wagon-description ms-3">
           <h4 class="m-0"> <%= wagon.name %></h4>
-          <p class="m-0"> <%= wagon.description %></p>
+          <p class="mb-3"> <%= wagon.description %></p>
           <% if policy(wagon).edit? %>
-            <%= link_to "Update", edit_user_wagon_path(wagon), class: 'btn btn-primary' %>
+            <%= link_to "Update", edit_wagon_path(wagon), class: 'wagon-links' %>
           <% end %>
         </div>
       </div>
+    </div>
     <% end %>
   </div>
 </div>

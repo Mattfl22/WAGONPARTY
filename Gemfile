@@ -74,3 +74,6 @@ gem 'cloudinary', '~> 1.16.0'
 
 # geocoding
 gem "geocoder"
+
+# secret  keys
+gem 'dotenv-rails', groups: [:development, :test]
