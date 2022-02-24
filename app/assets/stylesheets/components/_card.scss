@@ -26,47 +26,45 @@ margin: 50px 0px 50px 0;
   overflow: hidden;
 }
 
-.booking-cards {
-  display: block;
-  align-items: center;
-  justify-content: space-evenly;
-  margin: 50px 0px;
+.card-wagon{
+  border: solid 1px white;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  padding: 10px;
+  list-style: none;
+  border-radius: 4px;
+  position: relative;
+}
 
-  > .card-wagon{
-    border-radius: 4px;
-    padding: 10px 80px 10px 10px;
-  }
+.booking-card {
+  border: solid 1px white;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 10px 80px 10px 10px;
+  list-style: none;
+  border-radius: 4px;
+  position: relative;
 
-  > .booking-card {
-    border: solid 1px white;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 10px 80px 10px 10px;
-    list-style: none;
-    border-radius: 4px;
-    position: relative;
+    > .booking-destroy-btn {
+      margin-top: 5px;
+      font-size: small;
+      color: white;
+      border: 1px solid white;
+      padding: 5px;
+      border-radius: 4px;
+      text-decoration: none;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
 
-      > .booking-destroy-btn {
-        margin-top: 5px;
-        font-size: small;
-        color: white;
-        border: 1px solid white;
-        padding: 5px;
-        border-radius: 4px;
-        text-decoration: none;
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-      }
-
-      > .booking-destroy-btn:hover {
-        background-color: white;
-        color: black;
-      }
-  }
-
+    > .booking-destroy-btn:hover {
+      background-color: white;
+      color: black;
+    }
 }
 
 .wagon-result {
@@ -82,7 +80,9 @@ margin: 50px 0px 50px 0;
   padding: 5px;
   border-radius: 4px;
   text-decoration: none;
-  margin-top: 10px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
 }
 
 .wagon-links:hover {
