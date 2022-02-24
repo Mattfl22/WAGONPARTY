@@ -3,11 +3,13 @@
 <div class="banner-landing">
   <%= video_tag "pexel-video-test", autoplay: :autoplay, loop: :loop, muted: :muted, class: "banner-video" %>
   <h1 class="banner-h1">Welcome to the Wagon Party</h1>
-  <form action="#" class="banner-form">
-    <input type="text" placeholder="Start Location">
-    <input type="date" placeholder="Check in">
+  <%# add the search engine to filter results according to input %>
+  <%= form_tag wagons_path, :class=>"banner-form", method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      placeholder: "Find a party"%>
      <%=link_to "Let's Go!", wagons_path, class: "btn-submit"%>
-  </form>
+  <% end %>
 </div>
 
 <div class="container">
