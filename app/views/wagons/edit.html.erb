@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Update your wagon's info</h1>
+
+  <%= simple_form_for [ @user, @wagon ] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :capacity %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :location %>
+    <%= f.input :dates %>
+    <%= f.submit "Update wagon", class: "btn btn-primary" %>
+  <% end %>
+</div>

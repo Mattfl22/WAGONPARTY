@@ -1,5 +1,5 @@
 class WagonsController < ApplicationController
-  before_action :find_wagon, only: [:show]
+  before_action :find_wagon, only: [:show, :edit, :update]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -31,6 +31,19 @@ class WagonsController < ApplicationController
     @wagon.user = @user
     @wagon.save
     redirect_to wagons_path(@user)
+  end
+
+  def edit
+    authorize @wagon
+  end
+
+  def update
+    authorize @wagon
+    @wagon.update(wagon_params)
+    @user = current_user
+    @wagon.user = @user
+    @wagon.save
+    redirect_to user_path(@user)
   end
 
   private
