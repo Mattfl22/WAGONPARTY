@@ -1,17 +1,62 @@
-<%# Landing page %>
+<%# Home page %>
 <div class="banner-landing">
   <%# <%= video_tag "pexel-video-test", autoplay: :autoplay, loop: :loop, muted: :muted, class: "banner-video" %>
   <h1 class="banner-h1">Welcome to the Wagon Party</h1>
   <form action="#" class="banner-form">
     <input type="text" placeholder="Start Location">
     <input type="date" placeholder="Check in">
-    <%=link_to "Let's Go!", wagons_path, class:"btn-submit"%>
+     <%=link_to "Let's Go!", wagons_path, class: "btn-submit"%>
   </form>
 </div>
 
+<div class="container">
+  <h2>Our wagons, your rules 🚃</h2>
+</div>
+<div class="home-features">
+  <div class="feature-card feature-card-1">
+    <div class="feature-image">
+      <%= image_tag("feature-1")%>
+    </div>
+    <div class="feature-description">
+      <div class="feature-description-title">
+        <h3>Don't waste your time</h3>
+      </div>
+      <div class="feature-description-text">
+        <p>Enjoy the travel time before the real party</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-card feature-card-2">
+    <div class="feature-description">
+      <div class="feature-description-title">
+        <h3>No limit in our Wagons</h3>
+      </div>
+      <div class="feature-description-text">
+        <p>Have fun ! but don't jump off the train (please)</p>
+      </div>
+    </div>
+    <div class="feature-image">
+      <%= image_tag("feature-2")%>
+    </div>
+  </div>
+
+  <div class="feature-card feature-card-3">
+    <div class="feature-image">
+      <%= image_tag("feature-3")%>
+    </div>
+    <div class="feature-description">
+      <div class="feature-description-title">
+        <h3>Relax with your friends</h3>
+      </div>
+      <div class="feature-description-text">
+        <p>You won't even see the time pass</p>
+      </div>
+    </div>
+  </div>
 
 <div class="container">
-  <h1 style='font-weight: bold'>Our top recommendations 🕺</h1>
+  <h2 style='font-weight: bold'>Our top recommendations 🕺</h2>
   <div class="card-container">
     <% @wagons = Wagon.all.sample(3) %>
     <% @wagons.each do |wagon|%>
