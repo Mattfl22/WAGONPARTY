@@ -10,7 +10,7 @@
         <h4>Booking n° <%= booking.id %></h4>
         <li><%= "📅 Date : #{booking.start_date}" %></li>
         <li><%= "🚃 From : #{booking.start_location}" %></li>
-        <%= link_to "Cancel my booking", user_booking_path(@user), method: :delete, data: {confirm: 'Are you sure?'}, class:'booking-destroy-btn' %>
+        <%= link_to "Cancel my booking", user_booking_path(@user, booking), method: :delete, data: {confirm: 'Are you sure?'}, class:'booking-destroy-btn' %>
       </div>
     </div>
     <% end %>
