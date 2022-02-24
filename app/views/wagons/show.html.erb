@@ -36,7 +36,7 @@
         </div>
       </div>
       <div class="departure-info">
-        <h2>Upcoming departures:</h2>
+        <h2 id="departure-title">Upcoming departures:</h2>
         <div class="card-product">
           <ul class="date-list">
             <% @wagon.dates.each_with_index do |date, index|%>
@@ -45,7 +45,6 @@
                   <li><h2> <%= date %> </h2>
                   <p> <%= @wagon.description %> </p>
                 </div>
-                <%# <%= link_to "BOOK NOW !", "", :class => "btn btn-success btn-sm rounded" %>
 
                 <!-- Button trigger modal -->
                 <%= button_tag "BOOK NOW !",  class: "btn btn-success", data: { 'bs-toggle' => "modal", 'bs-target' => "#confirmationModal#{index}" } %>
