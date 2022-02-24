@@ -40,7 +40,6 @@
     > input {
       border: 0;
       padding: 10px;
-      margin-right: 60px
     }
     > input:focus-visible {
       outline: none;
@@ -52,6 +51,7 @@
       padding: 20px;
       border-radius: 0px 4px 4px 0px;
       opacity: 1;
+      margin-left: 60px;
     }
 
     .btn-submit:hover {
