@@ -36,8 +36,10 @@
           <% end %>
         </div>
         <div class="card-wagon-description ms-3">
-          <h4 class="m-0"> <%= wagon.name %></h4>
-          <p class="mb-3"> <%= wagon.description %></p>
+          <h4 class="m-0"><%= wagon.name %></h4>
+          <p class="mb-0">Description: <%= wagon.description %></p>
+          <p class="mb-0">📍 <%= wagon.location %> &nbsp;&nbsp;👥 <%= wagon.capacity %></p>
+          <p class="mb-0"></p>
           <% if policy(wagon).edit? %>
             <%= link_to "Update", edit_wagon_path(wagon), class: 'wagon-links' %>
           <% end %>
