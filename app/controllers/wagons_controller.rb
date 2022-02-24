@@ -35,6 +35,7 @@ class WagonsController < ApplicationController
   def create
     @wagon = Wagon.new(wagon_params)
     authorize @wagon
+    @wagon.dates = params.require(:wagon)[:dates].split
     @user = User.find(params[:user_id])
     @wagon.user = @user
     @wagon.save

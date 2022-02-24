@@ -7,7 +7,6 @@
 
       <% @wagons.each do |wagon| %>
         <div class="wagon-result d-flex justify-content-center align-items-center p-1 mb-2">
-
           <div class="card-img-top-result rounded">
             <% if wagon.photo.key %>
                 <%= cl_image_tag wagon.photo.key, crop: :fill, style:'height: 150px; width: 150px; object-fit:cover; border-radius: 4px' %>
@@ -17,16 +16,14 @@
           </div>
 
           <div class="card-body" style="margin-left: 20px"%>
-            <h5 class="card-title"><strong><%= wagon.name %></strong></h5>
+            <h5 class="card-title d-flex justify-content-between align-items-center"><strong><%= wagon.name %></strong><%= link_to "See prices", wagon_path(wagon), class: 'btn btn-primary' %></h5>
             <p>🚆 <strong>Departure:</strong> <%= wagon.location %></p>
-            <div class="dates-display d-flex">
-              <p class="me-2">📅 <strong>Available dates:</strong></p>
+            <div class="me-2">📅 <strong>Available dates:</strong>
               <% wagon.dates.each do |date| %>
                 <%= date %>
               <% end %>
             </div>
           </div>
-            <a> <%= link_to "See prices", wagon_path(wagon), class: 'btn btn-primary' %> </a>
         </div>
       <% end %>
 
