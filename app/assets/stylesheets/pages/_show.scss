@@ -7,7 +7,7 @@
 }
 
 .background-image-blurred {
-  background-image: url("https://images.ctfassets.net/r1xeyn8lz4i6/43cKUckljj4lTcSUrK6FyC/a5840a7931af523e5f161e415a1af41b/201_by_night_inside.jpg?w=1920");
+  // background-image: url('<%= wagon.photo %>');
   filter: blur(8px);
   height: 400px;
   position: absolute;
