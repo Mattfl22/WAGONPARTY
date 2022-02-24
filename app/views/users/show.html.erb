@@ -6,7 +6,7 @@
   <div class="row">
     <% @user.bookings.each do |booking|%>
     <div class="col-sm-6">
-      <div class="booking-card bg-black mb-3">
+      <div class="booking-card mb-3">
         <h4>Booking n° <%= booking.id %></h4>
         <li><%= "📅 Date : #{booking.start_date}" %></li>
         <li><%= "🚃 From : #{booking.start_location}" %></li>
@@ -27,7 +27,7 @@
   <div class="row">
     <% @wagons.each do |wagon| %>
     <div class="col-sm-6">
-      <div class="card-wagon bg-black border mb-3">
+      <div class="card-wagon border mb-3">
         <div class="card-wagon-img">
           <% if wagon.photo.key %>
             <%= cl_image_tag wagon.photo.key, crop: :fill, style:'height: 100px; width: 100px; object-fit:cover; border-radius: 4px' %>
