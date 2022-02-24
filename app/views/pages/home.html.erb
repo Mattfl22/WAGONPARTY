@@ -64,7 +64,13 @@
     <% @wagons = Wagon.all.sample(3) %>
     <% @wagons.each do |wagon|%>
       <div class="home-card" style="width: 20rem;">
-        <img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Wagon Picture">
+          <div class="rounded">
+            <% if wagon.photo.key %>
+                <%= cl_image_tag wagon.photo.key, crop: :fill, style:'height: 150px; width: 20rem; object-fit:cover; border-radius: 4px' %>
+              <% else %>
+                <img src="https://images.unsplash.com/photo-1599766431396-2405fdfcf5e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80", style='height: 150px; width: 150px; object-fit:cover; border-radius: 4px'/>
+              <% end %>
+          </div>
           <div class="card-body">
           <h5 class="home-card-title"> <strong><%= wagon.name %></strong></h5>
           <p class="home-card-text"><%= wagon.description %></p>
