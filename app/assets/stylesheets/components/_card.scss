@@ -32,6 +32,11 @@ margin: 50px 0px 50px 0;
   justify-content: space-evenly;
   margin: 50px 0px;
 
+  > .card-wagon{
+    border-radius: 4px;
+    padding: 10px 80px 10px 10px;
+  }
+
   > .booking-card {
     border: solid 1px white;
     display: flex;
@@ -41,9 +46,28 @@ margin: 50px 0px 50px 0;
     padding: 10px 80px 10px 10px;
     list-style: none;
     border-radius: 4px;
-  }
-}
+    position: relative;
 
+      > .booking-destroy-btn {
+        margin-top: 5px;
+        font-size: small;
+        color: white;
+        border: 1px solid white;
+        padding: 5px;
+        border-radius: 4px;
+        text-decoration: none;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+      }
+
+      > .booking-destroy-btn:hover {
+        background-color: white;
+        color: black;
+      }
+  }
+
+}
 
 .wagon-result {
   border-radius: 4px;
@@ -51,6 +75,20 @@ margin: 50px 0px 50px 0;
   border: 0;
 }
 
+.wagon-links {
+  font-size: small;
+  color: white;
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.wagon-links:hover {
+  background-color: white;
+  color: black;
+}
 
 // Media queries
 
@@ -75,5 +113,4 @@ margin: 50px 0px 50px 0;
   .home-card {
     margin: 20px 0;
   }
-
 }
