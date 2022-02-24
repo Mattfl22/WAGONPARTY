@@ -16,21 +16,55 @@
   }
 
   > .feature-card-1, .feature-card-3{
-    margin-right: 40%;
     color: white;
+    align-self: flex-start;
   }
   > .feature-card-2{
-    margin-left: 40%;
+    align-self: flex-end;
     color: white;
 
   }
-
-
 
 }
 
 
 .feature-image > img {
   width: 400px;
+
+}
+
+
+// Media queries
+
+@media(max-width: 992px) {
+
+}
+
+@media(max-width: 768px) {
+
+}
+
+@media(max-width: 480px) {
+
+  .home-h2 {
+    text-align: center;
+  }
+
+  .feature-card {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+  .feature-card-1, .feature-card-3 {
+    align-self: center;
+    text-align: center;
+
+
+  }
+  .feature-card-2{
+    text-align: center;
+    padding: 10px 0;
+    align-self: center;
+
+  }
 
 }

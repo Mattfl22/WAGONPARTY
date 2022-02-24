@@ -2,7 +2,12 @@ footer {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin: 0px 50px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  width: 100%;
+  padding: 20px 50px;
 }
 
 .footer-links {
