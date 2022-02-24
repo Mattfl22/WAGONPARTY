@@ -25,19 +25,18 @@ margin: 50px 50px 50px 0;
 }
 
 .booking-cards {
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: space-evenly;
   margin: 50px 0px;
 
   > .booking-card {
+    border: solid 1px white;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
     flex-direction: column;
-    background-color: #fff;
-    padding: 40px 80px;
-    box-shadow: 0px 2px 2px grey;
+    padding: 10px 80px 10px 10px;
     list-style: none;
     border-radius: 4px;
   }
