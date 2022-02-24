@@ -47,6 +47,9 @@ nav > ul{
 
 }
 
+#nav-mobile{
+  display: none;
+  }
 // Button hover
 
 
@@ -83,3 +86,33 @@ color: white;
 }
 
 // End hover
+
+
+// Media queries
+
+@media(max-width: 992px) {
+  // .cards {
+  //   grid-template-columns: 1fr 1fr;
+  // }
+}
+
+@media(max-width: 768px) {
+
+}
+
+@media(max-width: 480px) {
+
+  nav > ul{
+    max-width: 380px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .nav-connexion {
+    display: none;
+  }
+  .logo {
+    font-size: 2rem;
+  }
+
+}
