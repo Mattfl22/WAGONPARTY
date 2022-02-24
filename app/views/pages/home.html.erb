@@ -63,7 +63,7 @@
 
 <div class="container">
   <h2 class="home-h2 mb-3">Our top recommendations 🕺</h2>
-  <div class="home-card-container">
+  <div class="home-cards-container">
     <% @wagons = Wagon.all.sample(3) %>
     <% @wagons.each do |wagon|%>
       <div class="home-card" style="width: 20rem;">
@@ -77,7 +77,7 @@
           <div class="card-body">
           <h5 class="home-card-title"> <strong><%= wagon.name %></strong></h5>
           <p class="home-card-text"><%= wagon.description %></p>
-          <p> <%= link_to "Get the rave going", wagon_path(wagon), class: "btn btn-info" %></a>
+          <p> <%= link_to "Get the rave going", wagon_path(wagon), class: "btn-card" %></a>
         </div>
       </div>
     <% end %>
