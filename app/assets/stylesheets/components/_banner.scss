@@ -74,6 +74,22 @@
     animation: flicker 2s infinite alternate;
     color: #fff;
 }
+
+
+
+.home-random-button {
+  padding: 10px 20px;
+  background-color: white;
+  align-items: center;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 50px;
+}
+
+.home-random-button:hover {
+  background-color: $pink;
+}
+
 /* Flickering animation */
 @keyframes flicker {
 
@@ -94,4 +110,6 @@
   20%, 24%, 55% {
       text-shadow: none;
   }
+
+
 }
