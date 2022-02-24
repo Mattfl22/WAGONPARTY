@@ -16,12 +16,18 @@ class BookingsController < ApplicationController
     else
       redirect_to wagon_path(@wagon)
     end
+  end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.destroy
+    redirect_to user_path(@booking.user)
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :start_location)
+    params.require(:booking).permit(:start_date, :start_location, :id)
   end
 end

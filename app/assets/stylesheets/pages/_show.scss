@@ -7,7 +7,7 @@
 }
 
 .background-image-blurred {
-  background-image: url("https://images.ctfassets.net/r1xeyn8lz4i6/43cKUckljj4lTcSUrK6FyC/a5840a7931af523e5f161e415a1af41b/201_by_night_inside.jpg?w=1920");
+  // background-image: url('<%= wagon.photo %>');
   filter: blur(8px);
   height: 400px;
   position: absolute;
@@ -38,21 +38,41 @@
   margin-left: 8px
 }
 
+.card-product h1 {
+  font-size: 38px;
+  font-weight: bold;
+  color: $pink;
+}
+
 .card-product h2 {
   font-size: 16px;
   font-weight: bold;
+  color: $pink;
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  color: white;
 }
 
 .card-product-infos {
   padding: 16px;
+}
+
+.card-product-infos h4 {
+  font-size: 16px;
+}
+
+
+.departure-info h2 {
+  color: $pink;
+  font-size: 16px;
+  padding-left: 40px;
+  font-weight: bold;
 }
 
 .btn {
@@ -85,4 +105,15 @@
 
 .modal-content {
   color: black;
+}
+
+.card-product-img img{
+  width: 50px;
+  height: 50px;
+}
+
+.card-product-img{
+  justify-content: space-between;
+  width: 80%;
+  padding-top: 40px;
 }
