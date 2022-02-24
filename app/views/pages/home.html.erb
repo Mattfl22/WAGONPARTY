@@ -8,7 +8,7 @@
     <%= text_field_tag :query,
       params[:query],
       placeholder: "Find a party"%>
-     <%=link_to "Let's Go!", wagons_path, class: "btn-submit"%>
+      <%= submit_tag "Let's Go!", class: "btn-submit" %>
   <% end %>
 </div>
 
