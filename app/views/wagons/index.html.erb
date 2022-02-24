@@ -6,7 +6,7 @@
     <div class="wagons-card flex-row" style="width: 50%">
 
       <% @wagons.each do |wagon| %>
-        <div class="wagon-result border d-flex justify-content-center align-items-center p-1 mb-2">
+        <div class="wagon-result d-flex justify-content-center align-items-center p-1 mb-2">
 
           <div class="card-img-top-result rounded">
             <% if wagon.photo.key %>
@@ -17,16 +17,16 @@
           </div>
 
           <div class="card-body" style="margin-left: 20px"%>
-            <h5 class="card-title"><%= wagon.name %></h5>
-            <p>🚆 Departure: <%= wagon.location %></p>
+            <h5 class="card-title"><strong><%= wagon.name %></strong></h5>
+            <p>🚆 <strong>Departure:</strong> <%= wagon.location %></p>
             <div class="dates-display d-flex">
-              <p class="me-2">📅 Available dates:</p>
+              <p class="me-2">📅 <strong>Available dates:</strong></p>
               <% wagon.dates.each do |date| %>
                 <%= date %>
               <% end %>
             </div>
-            <a> <%= link_to "Select this wagon", wagon_path(wagon), class: 'btn btn-primary' %> </a>
           </div>
+            <a> <%= link_to "See prices", wagon_path(wagon), class: 'btn btn-primary' %> </a>
         </div>
       <% end %>
 

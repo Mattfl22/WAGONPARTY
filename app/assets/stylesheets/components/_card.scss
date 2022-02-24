@@ -70,7 +70,14 @@ margin: 50px 0px 50px 0;
 .wagon-result {
   border-radius: 4px;
   background-color: #323232;
+  border-color:#323232;
   border: 0;
+}
+
+.wagon-result .btn{
+  border-radius: 50px;
+  width: 150px;
+  margin-right: 20px;
 }
 
 .wagon-links {
