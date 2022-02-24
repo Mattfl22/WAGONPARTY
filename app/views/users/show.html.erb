@@ -1,19 +1,20 @@
 <div class="container">
   <h1 class='border-bottom'><%= "Welcome #{@user.first_name}" %></h1>
 
-  <h2>Your bookings</h2>
+  <h2>Your bookings (<%= @user.bookings.count %>)</h2>
   <div class="booking-cards">
     <% @user.bookings.each do |booking|%>
-      <ul class="booking-card">
+      <div class="booking-card text-dark">
+        <h4>Booking n° <%= booking.id %></h4>
         <li><%= "📅 Date : #{booking.start_date}" %></li>
         <li><%= "🚃 From : #{booking.start_location}" %></li>
-      </ul>
+      </div>
     <% end %>
   </div>
 
 
   <div class="wagons-header d-flex align-items-center mb-3">
-    <h2 class='m-0'>Your wagons</h2>
+    <h2 class='m-0'>Your wagons (<%= @wagons.count %>)</h2>
       <% if policy(Wagon).create? %>
         <%= link_to "New wagon", new_user_wagon_path(@user), class:'btn btn-success m-0 ms-3' %>
       <% end %>
