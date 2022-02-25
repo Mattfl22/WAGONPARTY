@@ -16,11 +16,12 @@ import "controllers"
 import "bootstrap"
 
 // document.addEventListener("data-turbolinks:load", () => {
-//   if (document.querySelector('img[data-bs-toggle=tooltip]')) {
-//     window.bootstrap = require('bootstrap/dist/js/bootstrap.bundle.js');
-//     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-//     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-//       return new bootstrap.Tooltip(tooltipTriggerEl)
-//     });
-//   }
+  // if (document.querySelector('img[data-bs-toggle=tooltip]')) {
+  //   window.bootstrap = require('bootstrap/dist/js/bootstrap.bundle.js');
+  //   // var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  //   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  //   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  //     return new bootstrap.Tooltip(tooltipTriggerEl)
+  //   })
+  // }
 // });
