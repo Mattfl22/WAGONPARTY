@@ -16,9 +16,9 @@
           <p> 🏷 <strong><%=rand(400..2000)%>€ / per trip</strong></p>
           <p> 👥 <%= @wagon.capacity %> </p>
           <div class="card-product-img d-flex">
-            <img src="/assets/feature-4.svg" alt="" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Free wifi">
-            <img src="/assets/feature-card.svg" alt="" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Payment in 3 times">
-            <img src="/assets/feature-cocktail.svg" alt="" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Open Bar">
+            <%= image_tag "feature-4.svg", data: {bs_toggle:'tooltip', bs_placement:"top", bs_trigger:"hover", title:"Free Wifi"} %>
+            <%= image_tag "feature-card.svg", data: {bs_toggle:"tooltip", bs_placement:"top", bs_trigger:"hover", title:"Payment in 3 times"} %>
+            <%= image_tag "feature-cocktail.svg", data: {bs_toggle:"tooltip", bs_placement:"top", bs_trigger:"hover", title:"Open Bar"} %>
           </div>
         </div>
       </div>
@@ -29,9 +29,8 @@
         </div>
         <div class="card-product-infos">
           <h2>Information</h2>
-          <p><strong>From:</strong> Paris</p>
-          <p><strong>To:</strong> Marseille</p>
-          <p><strong>Departure:</strong> Gare de Lyon, Samedi 05 Mars, 20h</p>
+          <p><strong>From : </strong> Paris, Gare de Lyon, 19h</p>
+          <p><strong>To : </strong><%= @wagon.location %></p>
           <p><strong>Contact :</strong> 01-02-03-04-05</p>
         </div>
       </div>
@@ -43,7 +42,7 @@
               <div class="card-booking">
                 <div class="card-booking-description">
                   <li><h2> <%= date %> </h2>
-                  <p> <%= @wagon.description %> </p>
+                  <p> <%= truncate @wagon.description, length: 100 %> </p>
                 </div>
 
                 <!-- Button trigger modal -->
