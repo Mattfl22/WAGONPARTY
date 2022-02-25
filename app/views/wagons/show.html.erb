@@ -15,13 +15,16 @@
           <h4>Don't miss out on this great opportunity</h4>
           <p> 🏷 <strong><%=rand(400..2000)%>€ / per trip</strong></p>
           <p> 👥 <%= @wagon.capacity %> </p>
-          <div class="card-product-img d-flex">
-            <%= image_tag "feature-4.svg", data: {bs_toggle:'tooltip', bs_placement:"top", bs_trigger:"hover", title:"Free Wifi"} %>
-            <%= image_tag "feature-card.svg", data: {bs_toggle:"tooltip", bs_placement:"top", bs_trigger:"hover", title:"Payment in 3 times"} %>
-            <%= image_tag "feature-cocktail.svg", data: {bs_toggle:"tooltip", bs_placement:"top", bs_trigger:"hover", title:"Open Bar"} %>
+          <div class="card-product-img d-flex" data-controller='tooltip'>
+            <%= image_tag "feature-4.svg", data: {bs_toggle:'tooltip', bs_placement:"top", bs_trigger:"hover", bs_original_title:"Free Wifi"} %>
+            <%= image_tag "feature-card.svg", data: {bs_toggle:"tooltip", bs_placement:"top", bs_trigger:"hover", bs_original_title:"Payment in 3 times"} %>
+            <%= image_tag "feature-cocktail.svg", data: {bs_toggle:"tooltip", bs_placement:"top", bs_trigger:"hover", bs_original_title:"Open Bar"} %>
           </div>
         </div>
       </div>
+            <%# <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+              Tooltip on top
+            </button> %>
       <div class="card-product">
         <div class="card-description">
           <h2>The wagon </h2>
