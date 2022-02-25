@@ -39,3 +39,16 @@ body {
 a:hover {
   color: white;
 }
+
+.train {
+  width: 150px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  animation:  linear 5s infinite running slidein;
+}
+
+@keyframes slidein {
+  from { right: 0px; }
+  to   { right: 100%;}
+}

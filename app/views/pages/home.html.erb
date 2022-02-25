@@ -9,6 +9,8 @@
       params[:query],
       placeholder: "Find a party"%>
       <%= submit_tag "Let's Go!", class: "btn-submit" %>
+    <img src="https://media1.giphy.com/media/l0IyaxKjZqenpMIQ8/giphy.gif?cid=ecf05e47u97xen1qgc29ryrralo5reph0boofdyqhd0q8yvy&rid=giphy.gif&ct=s" alt="" class="train">
+
   <% end %>
 
   <%# Add the button 'random trip' %>
@@ -65,7 +67,7 @@
   </div>
 
 <div class="container">
-  <h2 class="home-h2 mb-3 text-left">Our top recommendations 🕺</h2>
+  <h2 class="home-h2 mb-3">Our top recommendations 🕺</h2>
   <div class="home-cards-container">
     <% @wagons = Wagon.all.sample(3) %>
     <% @wagons.each do |wagon|%>
