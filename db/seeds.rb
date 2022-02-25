@@ -7,21 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-puts "clean db"
+puts "Cleaning db..."
 
 Wagon.destroy_all
 
 puts "Initializing FAKER..."
 
-@user = User.new(email: Faker::Internet.email, first_name: 'user', last_name: 'test', password: 'testtest')
-@user.save!
+@user = User.create(first_name: "Vincent", last_name: "Orinel", email: 'test@gmail.com', password: 'azerty')
 
 10.times do
   wagon = Wagon.new(
     name: Faker::Beer.brand,
-    description: Faker::Quotes::Shakespeare.hamlet_quote,
-    capacity: 8,
-    dates: ["20/06/2022", "03/04/2023"],
+    description: Faker::Quote.yoda,
+    capacity: [100, 150, 200, 50].sample,
+    dates: ["20/06/2022", "03/04/2023", "22/04/2022", "31/12/2022", "01/07/2022", "01/05/2022"].sample(2),
     location: ["Paris", "Lyon", "Marseille", "Rennes", "Strasbourg", "Biarritz", "Toulouse"].sample
   )
   wagon.user = @user
