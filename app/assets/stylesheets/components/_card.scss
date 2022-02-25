@@ -73,6 +73,24 @@ margin: 50px 0px 50px 0;
       background-color: white;
       color: $pink;
     }
+
+    > .booking-update-btn {
+      margin-top: 15px;
+      font-size: small;
+      color: white;
+      border: 1px solid white;
+      padding: 5px;
+      border-radius: 4px;
+      text-decoration: none;
+      bottom: 10px;
+      right: 10px;
+      background-color: $pink;
+    }
+
+    > .booking-update-btn:hover {
+      background-color: white;
+      color: $pink;
+    }
 }
 
 .wagon-result {
