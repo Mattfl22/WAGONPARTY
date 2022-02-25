@@ -31,7 +31,6 @@ margin: 50px 0px 50px 0;
 }
 
 .card-wagon{
-  border: solid 1px white;
   display: flex;
   align-items: flex-start;
   flex-direction: row;
@@ -44,7 +43,7 @@ margin: 50px 0px 50px 0;
 
 
 .booking-card {
-  border: solid 1px white;
+  border: 0;
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
@@ -59,7 +58,7 @@ margin: 50px 0px 50px 0;
       margin-top: 5px;
       font-size: small;
       color: white;
-      border: 1px solid white;
+      border: 0;
       padding: 5px;
       border-radius: 4px;
       text-decoration: none;
@@ -78,7 +77,6 @@ margin: 50px 0px 50px 0;
       margin-top: 15px;
       font-size: small;
       color: white;
-      border: 1px solid white;
       padding: 5px;
       border-radius: 4px;
       text-decoration: none;
@@ -109,7 +107,6 @@ margin: 50px 0px 50px 0;
 .wagon-links {
   font-size: small;
   color: white;
-  border: 1px solid white;
   padding: 5px;
   border-radius: 4px;
   text-decoration: none;
