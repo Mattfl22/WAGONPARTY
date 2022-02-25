@@ -50,6 +50,7 @@ class WagonsController < ApplicationController
     authorize @wagon
     @wagon.update(wagon_params)
     @user = current_user
+    @wagon.dates = params.require(:wagon)[:dates].split
     @wagon.user = @user
     @wagon.save
     redirect_to user_path(@user)
