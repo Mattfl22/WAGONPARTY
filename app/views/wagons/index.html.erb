@@ -17,7 +17,7 @@
 
           <div class="card-body" style="margin-left: 20px"%>
             <h5 class="card-title d-flex justify-content-between align-items-center"><strong><%= wagon.name %></strong><%= link_to "See prices", wagon_path(wagon), class: 'btn btn-primary' %></h5>
-            <p>🚆 <strong>Departure:</strong> <%= wagon.location %></p>
+            <p>🚆 <strong>Destination:</strong> <%= wagon.location %></p>
             <div class="me-2">📅 <strong>Available dates:</strong>
               <% wagon.dates.each do |date| %>
                 <%= date %>
