@@ -2,12 +2,12 @@
   <h1>Add a new wagon</h1>
 
   <%= simple_form_for [ @user, @wagon ] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :capacity %>
+    <%= f.input :name, placeholder: "Name of your wagon" %>
+    <%= f.input :description, placeholder: "Add a nice description of your wagon" %>
+    <%= f.input :capacity, placeholder: "How many people can stay in your wagon?" %>
     <%= f.input :photo, as: :file %>
-    <%= f.input :location %>
-    <%= f.input :dates %>
+    <%= f.input :location, placeholder: "Where is your wagon going to?" %>
+    <%= f.input :dates, placeholder: "Departure dates" %>
     <%= f.submit "Add wagon", class: "btn btn-primary" %>
   <% end %>
 </div>
