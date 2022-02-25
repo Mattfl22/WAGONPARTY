@@ -20,7 +20,7 @@ puts "Initializing FAKER..."
     name: Faker::Beer.brand,
     description: Faker::Quote.yoda,
     capacity: [100, 150, 200, 50].sample,
-    dates: ["20/06/2022", "03/04/2023", "22/04/2022", "31/12/2022", "01/07/2022", "01/05/2022"].sample(2),
+    dates: ["03/04/2023", "22/04/2022"],
     location: ["Paris", "Lyon", "Marseille", "Rennes", "Strasbourg", "Biarritz", "Toulouse"].sample
   )
   wagon.user = @user
