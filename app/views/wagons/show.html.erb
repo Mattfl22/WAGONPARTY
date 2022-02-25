@@ -42,7 +42,7 @@
               <div class="card-booking">
                 <div class="card-booking-description">
                   <li><h2> <%= date %> </h2>
-                  <p> <%= @wagon.description %> </p>
+                  <p> <%= truncate @wagon.description, length: 100 %> </p>
                 </div>
 
                 <!-- Button trigger modal -->
