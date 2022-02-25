@@ -29,7 +29,7 @@
   <div class="row">
     <% @wagons.each do |wagon| %>
     <div class="col-sm-6">
-      <div class="card-wagon border mb-3">
+      <div class="card-wagon mb-3">
         <div class="card-wagon-img">
           <% if wagon.photo.key %>
             <%= cl_image_tag wagon.photo.key, crop: :fill, style:'height: 100px; width: 100px; object-fit:cover; border-radius: 4px' %>
