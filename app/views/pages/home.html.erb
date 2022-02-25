@@ -1,7 +1,7 @@
 <%# Home page %>
 
 <div class="banner-landing">
-  <%# <%= video_tag "pexel-video-test", autoplay: :autoplay, loop: :loop, muted: :muted, class: "banner-video" %>
+  <%= video_tag "pexel-video-test.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "banner-video" %>
   <h1 class="banner-h1">Welcome to the Wagon Party</h1>
   <%# add the search engine to filter results according to input %>
   <%= form_tag wagons_path, :class=>"banner-form", method: :get do %>
